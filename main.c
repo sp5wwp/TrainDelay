@@ -5,7 +5,7 @@
 
 FILE *f;
 uint32_t f_siz=0, f_read=0;
-char data[12000000];
+char data[15000000];
 char str[1000];
 char needle[100];
 
@@ -34,6 +34,14 @@ int main(uint8_t argc, char *argv[])
 	f_siz=ftell(f);
 	//printf("Rozmiar  %d\n", f_siz);
 	rewind(f);
+	
+	if(f_siz<1000)
+	{
+		printf("Blad pliku JSON\n");
+		free(f);
+		
+		return 1;
+	}
 
 	f_read=fread(data, 1, f_siz, f);
 	//printf("Wczytano %d bajtow danych.\n", f_read);
