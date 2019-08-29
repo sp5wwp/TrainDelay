@@ -42,7 +42,7 @@ do
 		printf '%d\033[6`%s\033[45`%s\033[75`%s\033[100`%s\033[130`%s\033[150`%s\n' "$lp" "$carrier" "$name" "$from" "$to" "$number" "$delay"
 		
 		if [[ lp -eq num ]]; then
-			#rm get.html
+			rm get.html
 			exit
 		fi
 	done
