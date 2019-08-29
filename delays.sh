@@ -20,7 +20,7 @@ do
 		let "pages=(num+5)/6"
 		echo -e "\n$date"
 		echo -e "Pozycji: "$num"\n"
-		printf 'Lp.\033[6`Przewoźnik\033[45`Nazwa\033[75`Od\033[100`Do\033[130`Numer\033[150`Opóźnienie\n'
+		printf 'Lp.\033[6`Przewoźnik\033[45`Nazwa\033[75`Od\033[104`Do\033[134`Numer\033[154`Opóźnienie\n'
 	fi
 
 	for i in {1..6}
@@ -39,7 +39,7 @@ do
 		let b++
 		delay=`grep -F "item-value" get.html | sed -n "$b"'p' | awk -F["><"] '{print $3}'`
 		
-		printf '%d\033[6`%s\033[45`%s\033[75`%s\033[100`%s\033[130`%s\033[150`%s\n' "$lp" "$carrier" "$name" "$from" "$to" "$number" "$delay"
+		printf '%d\033[6`%s\033[45`%s\033[75`%s\033[104`%s\033[134`%s\033[154`%s\n' "$lp" "$carrier" "$name" "$from" "$to" "$number" "$delay"
 		
 		if [[ lp -eq num ]]; then
 			rm get.html
